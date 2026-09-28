@@ -1417,16 +1417,16 @@ export default function BUSH4() {
                             handleUpdate(row.id, key, e.target.value)
                           }
                           options={[
-                            { label: '', value: '' },
+                            { label: '-', value: '' },      // 👈 Beri tanda "-" agar terlihat saat kosong
                             { label: 'Med', value: 'Med' },
                             { label: 'High', value: 'High' },
                           ]}
-                          className={`border border-transparent rounded px-0.5 py-0.5 text-[11px] font-normal ${
+                          className={`w-full border rounded px-1 py-0.5 text-[11px] font-normal text-center cursor-pointer ${
                             row[key] === 'High'
-                              ? 'bg-red-500 text-white'
+                              ? 'bg-red-500 text-white border-red-500'
                               : row[key] === 'Med'
-                              ? 'bg-yellow-500 text-white'
-                              : 'bg-transparent'
+                              ? 'bg-yellow-500 text-black border-yellow-500 font-semibold'
+                              : 'bg-[#1e1e1e] text-gray-400 border-gray-600 hover:border-teal-400' // 👈 Diberi background & border gelap agar terlihat wujudnya
                           }`}
                         />
                       ) : key === 'remark_mat' ? (
